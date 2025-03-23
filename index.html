@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IgnisTV - Movies & TV Shows</title>
+    <link rel="stylesheet" href="styles.css">  
+</head>
+<body>
+    <header>
+        <div class="logo">🔥 <span>IgnisTV</span></div>
+        <nav>
+            <button class="nav-btn" onclick="showSection('movies')">🎬 Movies</button>
+            <button class="nav-btn" onclick="showSection('tvShows')">📺 TV Shows</button>
+            <button class="nav-btn" onclick="showSection('topRated')">⭐ Top Rated</button>
+            <input type="text" id="searchInput" placeholder="Search..." oninput="searchContent()">
+            <button id="searchBtn" onclick="searchContent()">🔍</button>
+        </nav>
+    </header>
+
+    <main>
+        <div id="movies" class="section">
+            <h2>🔥 Trending Movies</h2>
+            <div id="moviesContainer"></div>
+        </div>
+
+        <div id="tvShows" class="section">
+            <h2>📺 Trending TV Shows</h2>
+            <div id="tvShowsContainer"></div>
+        </div>
+
+        <div id="topRated" class="section">
+            <h2>⭐ Top Rated Movies</h2>
+            <div id="topRatedMoviesContainer"></div>
+            <h2>⭐ Top Rated TV Shows</h2>
+            <div id="topRatedTVShowsContainer"></div>
+        </div>
+
+        <div id="searchResults" class="section">
+            <h2>🔍 Search Results</h2>
+            <div id="searchResultsContainer"></div>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div id="movieModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <div class="modal-body">
+                <div class="left-column">
+                    <h2 id="movieTitle"></h2>
+                    <p id="movieOverview"></p>
+                    <div class="review-box">
+                        <p><strong>🎥 Director:</strong> <span id="movieDirector"></span></p>
+                        <p><strong>👥 Cast:</strong> <span id="movieCast"></span></p>
+                        <p><strong>⭐ Rating:</strong> <span id="movieRating"></span></p>
+                    </div>
+                </div>
+                <div class="right-column">
+                    <iframe id="movieTrailer" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script defer src="script.js"></script>
+</body>
+</html>

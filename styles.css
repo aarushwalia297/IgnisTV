@@ -1,0 +1,236 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #141414;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #111;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+header .logo span {
+    color: #0ff;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-btn {
+    background-color: #111;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    margin-left: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: #0ff;
+}
+
+#searchInput {
+    padding: 10px;
+    margin-left: 20px;
+    border-radius: 5px;
+    border: 1px solid #0ff;
+    background-color: #222;
+    color: #fff;
+    font-size: 16px;
+    width: 200px;
+}
+
+#searchBtn {
+    background-color: #0ff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+#searchBtn:hover {
+    background-color: #008cff;
+}
+
+/* Sections */
+.section {
+    display: none;
+    margin-top: 20px;
+}
+
+.section.active {
+    display: block;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Movie and TV show container */
+#moviesContainer, #tvShowsContainer, #topRatedMoviesContainer, #topRatedTVShowsContainer, #searchResultsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.movie-card, .show-card {
+    background-color: #222;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:hover, .show-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+}
+
+.movie-card img, .show-card img {
+    width: 100%;
+    border-bottom: 3px solid #0ff;
+}
+
+.movie-card h3, .show-card h3 {
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.movie-card p, .show-card p {
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+    color: #bbb;
+}
+
+button {
+    background-color: #0ff;
+    color: #111;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #008cff;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-content {
+    background-color: #111;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 85%; /* Adjusted for larger width */
+    max-width: 1200px; /* Increased max-width */
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.modal-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.left-column {
+    width: 60%;
+    padding-right: 20px;
+}
+
+.right-column {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Increased size for the trailer iframe */
+#movieTrailer {
+    width: 100%;
+    height: 500px; /* Increased height for better visibility */
+    border-radius: 10px;
+}
+
+/* Increased text size */
+#movieTitle {
+    font-size: 2.5em; /* Larger title font size */
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+#movieOverview {
+    font-size: 1.2em; /* Larger text for overview */
+    margin-bottom: 20px;
+    color: #bbb;
+}
+
+#movieRating {
+    font-size: 1.4em; /* Larger rating font */
+    margin-bottom: 20px;
+    color: #ffcc00;
+}
+
+#movieDirector,
+#movieCast {
+    font-size: 1.2em; /* Increased font size for director and cast */
+    color: #aaa;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Animation for modal */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
